@@ -1,0 +1,121 @@
+
+package Evanstmc00050022;
+import java.awt.*;
+import java.awt.event.*;
+import static java.lang.Integer.parseInt;
+
+public class EvansTMC00050022 {
+
+    
+    public static void main(String[] args) {
+    Frame f= new Frame("MY CALCULATOR");
+    
+        Label ga= new Label("First number");
+        ga.setBounds(20,80, 100,30);
+        final TextField ra= new TextField();
+        ra.setBounds(150,80,200,30);
+        
+        Label gb= new Label("Second number");
+        gb.setBounds(20,120, 100,30);
+        final TextField rb= new TextField();
+        rb.setBounds(150,120,200,30);
+        
+         Label gc= new Label("results:");
+        gc.setBounds(20,160, 100,30);
+        final Label rc=new Label();
+        rc.setBounds(150,160,200,30);
+        
+        
+        Button a= new Button("+");
+        a.setBounds(20,210,150,30);
+        
+        Button b= new Button("-");
+        b.setBounds(200,210,150,30);
+        
+        
+        Button d=new Button("*");
+        d.setBounds(20,250,150,30);
+        
+        Button e= new Button("/");
+        e.setBounds(200,250,150,30);
+        
+         Button h= new Button("%");
+        h.setBounds(20,290,150,30);
+        
+        Button k= new Button("clear");
+        k.setBounds(200, 290, 150, 30);
+        
+        
+         a.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+               int x = parseInt(ra.getText());
+        int y = parseInt(rb.getText());
+               rc.setText(String.valueOf(x+y));
+              
+            }
+        });
+        
+         b.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                     int x = parseInt(ra.getText());
+        int y = parseInt(rb.getText());
+               rc.setText(String.valueOf(x-y));
+               
+            }
+        });
+        
+        d.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e){
+                    int x = parseInt(ra.getText());
+        int y = parseInt(rb.getText());
+               rc.setText(String.valueOf(x*y));
+               
+            }
+        });
+        
+       e.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e){
+                 double x = parseInt(ra.getText());
+        double y = parseInt(rb.getText());
+               rc.setText(String.valueOf(x/y));
+               
+            }
+        });
+       
+         h.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e){
+                 int x = parseInt(ra.getText());
+        int y = parseInt(rb.getText());
+               rc.setText(String.valueOf(x%y));
+               
+            }
+        });
+         
+           k.addActionListener(new ActionListener(){
+          public void actionPerformed(ActionEvent e){
+                 ra.setText(null);
+                  rb.setText(null); 
+                  rc.setText(null);
+               
+            }
+        });
+        f.add(ga);
+        f.add(k);
+        f.add(h);
+        f.add(ra);
+        f.add(gb);
+        f.add(rb);
+        f.add(gc);
+        f.add(a);
+        f.add(d);
+        f.add(b);
+        f.add(rc);
+        f.add(e);
+        f.setSize(400,400);
+        f.setLayout(null);
+        f.setVisible(true);
+        
+    }
+    }
+    
+
